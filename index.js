@@ -6,36 +6,36 @@ var Counter = React.createClass({
     },
     
     getDefaultProps: function() {
-        console.log('Definicja podstawowych propsów.')
+        console.log('Definicja podstawowych propsów.');
     },
 
     componentWillMount: function() {
-        console.log('Ustawianie początkowych stanów')
+        console.log('Ustawianie początkowych stanów');
     },
     
     componentDidMount: function() {
-        console.log('Tutaj np. operacje na obiekcie')
+        console.log('Tutaj np. operacje na obiekcie');
     },
     
     componentWillReceive: function(nextProps) {
-        console.log('Tutaj dodawanie propsów')
+        console.log('Tutaj dodawanie propsów');
     },
     
     shouldComponentUpdate: function(nextProps, nextState) {
         console.log('Tutaj np. zablokowanie re-renderingu');
-        return true
+        return true;
     },
     
     componentWillUpdate: function(nextProps, nextState) {
-        console.log('Aktualizacja propsów i state')
+        console.log('Aktualizacja propsów i state');
     },
     
     componentDidUpdate: function(prevProps, prevState) {
-        console.log('Tutaj operacje z wykorzystaniem starych propsów i state')
+        console.log('Tutaj operacje z wykorzystaniem starych propsów i state');
     },
     
     componentWillUnmount: function() {
-        console.log('Np. odczepianie event listenera')
+        console.log('Np. odczepianie event listenera');
     },
     
     increment: function() {

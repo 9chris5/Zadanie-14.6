@@ -1,4 +1,4 @@
-var CounterUp = React.createClass({
+var Counter = React.createClass({
     getInitialState: function() {
         return {
             counter: 0
@@ -6,51 +6,36 @@ var CounterUp = React.createClass({
     },
     
     getDefaultProps: function() {
-        return {
-            console.log('Definicja podstawowych propsów.')
-        };
+        console.log('Definicja podstawowych propsów.')
     },
 
     componentWillMount: function() {
-        return {
-            console.log('Ustawianie początkowych stanów')
-        };
+        console.log('Ustawianie początkowych stanów')
     },
     
     componentDidMount: function() {
-        return {
-            console.log('Tutaj np. operacje na obiekcie')
-        };
+        console.log('Tutaj np. operacje na obiekcie')
     },
     
     componentWillReceive: function(nextProps) {
-        return {
-            console.log('Tutaj dodawanie propsów')
-        };
+        console.log('Tutaj dodawanie propsów')
     },
     
     shouldComponentUpdate: function(nextProps, nextState) {
-        return {
-            console.log('Tutaj np. zablokowanie re-renderingu')
-        };
+        console.log('Tutaj np. zablokowanie re-renderingu');
+        return true
     },
     
     componentWillUpdate: function(nextProps, nextState) {
-        return {
-            console.log('Aktualizacja propsów i state')
-        };
+        console.log('Aktualizacja propsów i state')
     },
     
     componentDidUpdate: function(prevProps, prevState) {
-        return {
-            console.log('Tutaj operacje z wykorzystaniem starych propsów i state')
-        };
+        console.log('Tutaj operacje z wykorzystaniem starych propsów i state')
     },
     
     componentWillUnmount: function() {
-        return {
-            console.log('Np. odczepianie event listenera')
-        };
+        console.log('Np. odczepianie event listenera')
     },
     
     increment: function() {
@@ -58,20 +43,7 @@ var CounterUp = React.createClass({
             counter: this.state.counter + 1
         });
     },
-
-    render: function() {
-        return React.createElement('div', {onClick: this.increment},
-            React.createElement('span', {}, 'Licznik ' + this.state.counter)
-        );
-    }
-});
-var CounterDown = React.createClass({
-    getInitialState: function() {
-        return {
-            counter: 0
-        };
-    },
-
+        
     decrement: function() {
         this.setState({
             counter: this.state.counter - 1
@@ -79,12 +51,13 @@ var CounterDown = React.createClass({
     },
 
     render: function() {
-        return React.createElement('div', {onClick: this.decrement},
-            React.createElement('span', {}, 'Licznik ' + this.state.counter)
+        return React.createElement('div', {},
+            React.createElement('span', {}, 'Licznik ' + this.state.counter),
+            React.createElement('button', {onClick: this.increment}, '+'),
+            React.createElement('button', {onClick: this.decrement}, '-')
         );
     }
 });
-var element1 = React.createElement(CounterUp);
-var element2 = React.createElement(CounterDown);
-ReactDOM.render(element1, document.getElementById('app1'));
-ReactDOM.render(element2, document.getElementById('app2'));
+
+var element = React.createElement(Counter);
+ReactDOM.render(element, document.getElementById('app1'));

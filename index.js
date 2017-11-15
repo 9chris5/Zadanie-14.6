@@ -11,6 +11,48 @@ var CounterUp = React.createClass({
         };
     },
 
+    componentWillMount: function() {
+        return {
+            console.log('Ustawianie początkowych stanów')
+        };
+    },
+    
+    componentDidMount: function() {
+        return {
+            console.log('Tutaj np. operacje na obiekcie')
+        };
+    },
+    
+    componentWillReceive: function(nextProps) {
+        return {
+            console.log('Tutaj dodawanie propsów')
+        };
+    },
+    
+    shouldComponentUpdate: function(nextProps, nextState) {
+        return {
+            console.log('Tutaj np. zablokowanie re-renderingu')
+        };
+    },
+    
+    componentWillUpdate: function(nextProps, nextState) {
+        return {
+            console.log('Aktualizacja propsów i state')
+        };
+    },
+    
+    componentDidUpdate: function(prevProps, prevState) {
+        return {
+            console.log('Tutaj operacje z wykorzystaniem starych propsów i state')
+        };
+    },
+    
+    componentWillUnmount: function() {
+        return {
+            console.log('Np. odczepianie event listenera')
+        };
+    },
+    
     increment: function() {
         this.setState({
             counter: this.state.counter + 1
